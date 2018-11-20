@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="pics/dif.png" sizes="16x16" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <title>DIF</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+<!-- i head så finns lite script samt länk till min css fil -->
+  <body>
+
+<!-- här börjar min header samt nav bar -->
+    <header>
+      <img src="pics/dif.png" alt="DIF">
+      <h1> Djurgårdens IF </h1>
+    </header>
+
+<!-- En av mina huvuddivvar som större delen av hemsidan befinner sig på-->
+    <div class="middle">
+      <nav>
+        <ul>
+          <a href="#om"><li>Om oss</li></a>
+          <a href="#SpelS"><li>Kommande Matcher</li></a>
+          <a href="#tabell"><li>Allsvenskan</li></a>
+        </ul>
+      </nav>
+      <h2 id="om"> Djurgårdens IF </h2>
+        <p> År 1891 bildades Djurgårdens Idrottsförening. 1990 formades Djurgårdsalliansen för att säkra föreningens existens. Nu 2018, efter att tusentals engagerade djurgårdare – ledare, idrottare, styrelser, organisationer och supportrar medverkat i arbetet så antog alla föreningar gemensamt en styrande värdegrund för alla alliansföreningar.<br>
+            Den består av en vision och en position som uttalar en evig strävan att vara den ledande idrottsföreningen i Sverige, med ambitionen att vara bäst på att få människor att växa. Det är den fyr som ger riktning för oss och alla som vill verka med vårt namn.<br>
+            Vår karta är våra nio framgångsprinciper. Vi vet att när vi följer dem, så går alla resultat vår väg. Vi har nått störst framgångar i flest idrotter under våra första 125 år.<br>
+            Vår gemensamma plattform gör oss ännu bättre på att få människor att växa och ge mer tillbaka till människor och samhälle i ytterligare 125 år.<br>
+        <p>
+      <hr id="SpelS">
+        <iframe frameborder="0"  width="18%"  height="250" src="http://www2.svenskfotboll.se/t/livescorewidget.aspx?lag=89483"></iframe>
+          <img src="pics/SpelS.png" alt="SPELSCHEMA">
+      <h5> Detta är spelchemat för Djurgården Fotboll 2018<h5>
+        <div class="allsvenskan">
+          <hr id="tabell">
+          <script type="text/javascript" src="http://www2.svenskfotboll.se/widget.aspx?scr=table&amp;ftid=72152&amp;b1=%23233446&amp;f1=%23ffffff&amp;b2=%23acbfda&amp;f2=%23000000&amp;b3=%23ffffff&amp;f3=%23000000&amp;b4=%23ececec&amp;bo=%23dfdfdf&amp;s=1"></script>
+        </div>
+    </div>
+
+    <!-- Script som gör en smooth scrolling -->
+
+    <script>
+    $('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+      if (
+        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+        &&
+        location.hostname == this.hostname
+      ) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000, function() {
+          });
+        }
+      }
+    });
+    </script>
+
+  </body>
+</html>
